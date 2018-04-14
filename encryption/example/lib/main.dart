@@ -94,6 +94,7 @@ class _MyAppState extends State<MyApp> {
 
     print('###################### _decrypt #####################');
     _decrypted = await Encryption.getDecryptedString(_password, _encrypted);
+    assert(_string == _decrypted);
     setState(() {});
   }
 }

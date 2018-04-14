@@ -1,11 +1,12 @@
-import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:encryption/encryption.dart';
 
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatefulWidget {
+  final String data = 'Running on:';
   @override
   _MyAppState createState() => new _MyAppState();
 }
@@ -85,9 +86,9 @@ class _MyAppState extends State<MyApp> {
     _string = value;
   }
 
-  void _onPressed() async {
-    if (_password == null) return;
-    if (_string == null) return;
+ _onPressed() async {
+    if (_password == null) return null;
+    if (_string == null) return null;
     print('###################### _encrypt #####################');
     _encrypted = await Encryption.getEncryptedString(_password, _string);
 
